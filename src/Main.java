@@ -1,13 +1,26 @@
 public class Main {
     public static void main(String[] args) {
-        ProduktMenu produkt1 = new ProduktMenu("123", "Kawa", 5.0, "Napoj" , 1);
-        ProduktMenu produkt2 = new ProduktMenu("124", "herbata", 4.0, "Napoj",1);
-        ProduktMenu produkt3 = new ProduktMenu("125", "sok pomaranczowy", 6.0, "Napoj", 1);
-       System.out.println(produkt1.toString());
-       System.out.println(produkt1.equals(produkt2));
-       KlientKawiarni klient1 = new KlientKawiarni(123,"Jan","Kowalski", "jkowalski@gmail.com");
-       klient1.daneKlienta();
-       System.out.println(klient1.toString());
+        ProduktMenu p1 = new ProduktMenu("K-01", "Espresso", 9.0, "kawa");
+        ProduktMenu p2 = new ProduktMenu("K-02", "Cappuccino", 13.5, "kawa");
+        ProduktMenu p3 = new ProduktMenu("D-01", "Sernik", 16.0, "deser");
 
+        KlientKawiarni klient = new KlientKawiarni(100, "Julia", "Mazur", "j.mazur@mail.pl");
+
+        Zamowienie zamowienie = new Zamowienie(klient);
+        zamowienie.dodajProdukt(p1);
+        zamowienie.dodajProdukt(p2);
+        zamowienie.dodajProdukt(p3);
+
+        System.out.println(klient);
+        System.out.println(zamowienie);
+        System.out.println("Łączna wartość: " + zamowienie.policzWartosc());
+        System.out.println("Liczba pozycji: " + zamowienie.policzLiczbeProduktow());
+        System.out.println("Liczba produktów utworzonych w systemie: " + ProduktMenu.getLiczbaProduktow());
+
+        ProduktMenu kopiaEspresso = new ProduktMenu("K-01", "Espresso duplikat", 9.0, "kawa");
+        System.out.println("Czy produkty są równe? " + p1.equals(kopiaEspresso));
+
+        zamowienie.oznaczJakoOplacone();
+        System.out.println(zamowienie);
     }
 }

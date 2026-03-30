@@ -7,12 +7,16 @@ public class ProduktMenu {
     private String kategoria;
     private static int liczbaProduktow;
 
-    public ProduktMenu(String kod, String nazwa, double cena, String kategoria, int liczbaProduktow){
+    public ProduktMenu(String kod, String nazwa, double cena, String kategoria){
         this.kod=kod;
         this.nazwa=nazwa;
         this.cena=cena;
         this.kategoria=kategoria;
         liczbaProduktow++;
+    }
+
+    public double getCena() {
+        return cena;
     }
 
     public static int getLiczbaProduktow() {
