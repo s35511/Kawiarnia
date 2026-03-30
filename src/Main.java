@@ -5,6 +5,9 @@ public class Main {
         ProduktMenu produkt3 = new ProduktMenu("125", "sok pomaranczowy", 6.0, "Napoj", 1);
        System.out.println(produkt1.toString());
        System.out.println(produkt1.equals(produkt2));
+       KlientKawiarni klient1 = new KlientKawiarni(123,"Jan","Kowalski", "jkowalski@gmail.com");
+       klient1.daneKlienta();
+       System.out.println(klient1.toString());
 
     }
 }
